@@ -27,7 +27,7 @@ const HomeHeader = ()=> {
                             <div className="decoration">
                                 <img src={decoration} alt='home-decoration'></img>
                             </div>
-                            <div className="btns">
+                            <div className="btn">
                                 <NavLink to="/logowanie"><button>ODDAJ <br></br>RZECZY</button></NavLink>
                                 <button>ZORGANIZUJ ZBIÓRKĘ</button>
                             </div>
@@ -37,11 +37,37 @@ const HomeHeader = ()=> {
         </>
     )
 }
-
+const HomeTreeColumns = () => {
+    return (
+        <>
+            <div className="tree-columns-container">
+                <div className="informations">
+                    <div className="info">
+                        <h1>10</h1>
+                        <h2>ODDANYCH WORKÓW</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisc Pellentesque vel enim a elit viverra elementuma. Aliquam erat volutpat.</p>
+                    </div>
+                    <div className="info">
+                        <h1>5</h1>
+                        <h2>WSPARTYCH ORGANIZACJI</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisc Pellentesque vel enim a elit viverra elementuma. Aliquam erat volutpat.</p>
+                    </div>
+                    <div className="info">
+                        <h1>7</h1>
+                        <h2>ZOGRANIZOWANYCH ZBIÓREK</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisc Pellentesque vel enim a elit viverra elementuma. Aliquam erat volutpat.</p>
+                    </div>
+                </div>
+            </div>
+        </>
+    )
+  }
+  
 const Home = ()=> {
     return (
         <>
-        <Element name="start"><HomeHeader/></Element>        
+        <Element name="start"><HomeHeader/></Element>
+        <HomeTreeColumns/>  
         </>
     )
 }
