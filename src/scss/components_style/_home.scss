@@ -1,0 +1,89 @@
+
+//HEADER
+
+.main-view-container {
+    display: flex;
+    height: 100vh;
+    >img{
+        width: 70rem;
+        height: 100%;
+    }
+}
+.header-container {
+    width: calc(100vw - 70rem);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;  
+}
+.section_top {
+    display: flex;
+    flex-direction: column;
+    height: 7.6rem;
+    margin-right: 12.2rem;
+    margin-bottom: 18rem;
+}
+.login_out {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    a{
+        font-size: 1.3rem;
+        text-decoration: none;
+        color: $light-grey;
+        padding: 0.9rem 1rem;
+    }
+    .second_navlink {
+        margin-left: 1.5rem ;
+        border: 0.8px solid $sweety-yellow;
+    }
+} 
+.header_nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    a {
+        font-size: 1.7rem;
+        text-decoration: none;
+        color: $dark-brown;
+        padding: 0.9rem 2rem;
+    }
+}
+.header-main-info {
+   
+    height: 28rem;
+    width: 66rem;
+    margin-right: 12.2rem;
+    .title {
+        height: 4rem;
+        font-size: 3.4rem;
+        color: $dark-brown;
+        letter-spacing: -0.76px;
+        text-align: center;
+        opacity: 1;
+    }
+    .decoration {
+        margin-top: 7rem;
+        margin-bottom: 3rem;
+        display: flex;
+        flex-direction: column;
+    }
+    
+}
+.btns {
+    display: flex;
+    justify-content: space-evenly;
+}
+.btns button {
+    width: 25rem;
+    height: 10rem;
+    font-size: 3rem;
+    color: $dark-brown;
+    font-family: $font-base;
+    text-align: center;
+    font-weight: 300;
+    border: 0.8px solid $dark-brown;
+    background-color: transparent;
+}
