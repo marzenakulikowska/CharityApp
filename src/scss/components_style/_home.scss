@@ -125,3 +125,55 @@
         }
     }
 }
+//-----------------------------------
+
+
+//SIMPLE STEPS
+
+.simple-steps-container {
+    height: 70rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: $dark-brown;
+    .simple-steps-title {
+        height: 20rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        p{
+            font-size: 3.4rem;
+            letter-spacing: -0.76px;  
+        } 
+    }
+    .steps-grey-container {
+        height: 30rem;
+        width: 100%;
+        background-color: $light-white;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        .step {
+            text-align: center;
+            max-width: 13rem;
+            h2 {
+                font-size: 1.7rem;
+                font-weight: 400;
+                margin-bottom: 1rem;
+            }
+            p {
+                font-size: 1.2rem;
+            }
+        }
+    }
+    .btn-steps {
+        height: 20rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    
+}

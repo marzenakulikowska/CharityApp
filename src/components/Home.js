@@ -3,6 +3,10 @@ import { NavLink} from 'react-router-dom';
 import {Link,Element} from "react-scroll";
 import home_package from '../assets/home_package.jpg';
 import decoration from '../assets/decoration.svg';
+import icon_1 from '../assets/icon-1.svg';
+import icon_2 from '../assets/icon-2.svg';
+import icon_3 from '../assets/icon-3.svg';
+import icon_4 from '../assets/icon-4.svg';
 const HomeHeader = ()=> {
     return (
         <>
@@ -62,12 +66,49 @@ const HomeTreeColumns = () => {
         </>
     )
   }
-  
+  const HomeSimpleSteps = () => {
+    return (
+        <>
+            <div className="simple-steps-container">
+                <div className="simple-steps-title">
+                    <p>Wystarczą 4 proste kroki</p>
+                    <img src={decoration} alt='home-decoration'></img>
+                </div>
+                <div className="steps-grey-container">
+                    <div className="step">
+                        <img src={icon_1} alt="icon-1"></img>
+                        <h2>Wybierz rzeczy</h2>
+                        <p>ubrania, zabawki, sprzęt i inne</p>
+                    </div>
+                    <div className="step">
+                        <img src={icon_2} alt="icon-2"></img>
+                        <h2>Spakuj je</h2>
+                        <p>skorzystaj z worków na śmieci</p>
+                    </div>
+                    <div className="step">
+                        <img src={icon_3} alt="icon-3"></img>
+                        <h2>Zdecyduj komu chcesz pomóc</h2>
+                        <p>wybierz zaufane miejsce</p>
+                    </div>
+                    <div className="step">
+                        <img src={icon_4} alt="icon-4"></img>
+                        <h2>Zamów kuriera</h2>
+                        <p>kurier przyjedzie w dogodnym terminie</p>
+                    </div>
+                </div>
+                <div className="btn btn-steps">
+                    <NavLink to="/logowanie"><button>ODDAJ <br></br>RZECZY</button></NavLink>
+                </div>
+            </div>
+        </>
+    )
+  }
 const Home = ()=> {
     return (
         <>
         <Element name="start"><HomeHeader/></Element>
         <HomeTreeColumns/>  
+        <Element name="simple_steps"><HomeSimpleSteps/></Element>
         </>
     )
 }
