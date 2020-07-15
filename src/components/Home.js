@@ -7,6 +7,9 @@ import icon_1 from '../assets/icon-1.svg';
 import icon_2 from '../assets/icon-2.svg';
 import icon_3 from '../assets/icon-3.svg';
 import icon_4 from '../assets/icon-4.svg';
+import people from '../assets/people.jpg';
+import signature from '../assets/signature.svg'
+
 const HomeHeader = ()=> {
     return (
         <>
@@ -103,12 +106,31 @@ const HomeTreeColumns = () => {
         </>
     )
   }
+  const HomeAbout = () => {
+    return (
+        <>
+            <div className="about-container">
+                <div className="about-us">
+                    <h2>O nas</h2>
+                    <img src={decoration} alt='home-decoration'></img>
+                    <p>Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens parsnip.</p>
+                    <div>
+                        <img src={signature} alt='signature'></img>
+                    </div>
+                </div>
+                <div className="people-img">
+                </div>
+            </div>
+        </>
+    )
+  }
 const Home = ()=> {
     return (
         <>
         <Element name="start"><HomeHeader/></Element>
         <HomeTreeColumns/>  
         <Element name="simple_steps"><HomeSimpleSteps/></Element>
+        <Element name="about"><HomeAbout/></Element>
         </>
     )
 }
