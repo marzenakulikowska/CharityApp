@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { NavLink} from 'react-router-dom'; 
 import {Link,Element} from "react-scroll";
 import home_package from '../assets/home_package.jpg';
@@ -16,7 +16,7 @@ const HomeHeader = ()=> {
             <div className="main-view-container">
                     <img src={home_package} alt="header-photo"></img>
                     <div className="header-container">
-                    <header className="section_top">
+                    <div className="section_top">
                         <div className="login_out">
                             <NavLink to="/logowanie">Zaloguj</NavLink>
                             <NavLink to="/rejestracja" className="second_navlink">Załóż konto</NavLink>
@@ -28,15 +28,17 @@ const HomeHeader = ()=> {
                             <Link to="who_we_help"  smooth={true} duration={1500}>Fundacja i organizacje</Link>
                             <Link to="contact"  smooth={true} duration={1500}>Kontakt</Link>
                         </div>
-                    </header>
+                    </div>
                         <div className="header-main-info">
-                            <div className="title">Zacznij pomagać! <br></br> Oddaj niechciane rzeczy w zaufane ręce</div>
-                            <div className="decoration">
-                                <img src={decoration} alt='home-decoration'></img>
-                            </div>
-                            <div className="btn">
-                                <NavLink to="/logowanie"><button>ODDAJ <br></br>RZECZY</button></NavLink>
-                                <button>ZORGANIZUJ ZBIÓRKĘ</button>
+                            <div>
+                                <div className="title">Zacznij pomagać! <br></br> Oddaj niechciane rzeczy w zaufane ręce</div>
+                                <div className="decoration">
+                                    <img src={decoration} alt='home-decoration'></img>
+                                </div>
+                                <div className="btn">
+                                    <NavLink to="/logowanie"><button>ODDAJ <br></br>RZECZY</button></NavLink>
+                                    <button>ZORGANIZUJ ZBIÓRKĘ</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -74,7 +76,7 @@ const HomeTreeColumns = () => {
         <>
             <div className="simple-steps-container">
                 <div className="simple-steps-title">
-                    <p>Wystarczą 4 proste kroki</p>
+                    <h1 className="main-title">Wystarczą 4 proste kroki</h1>
                     <img src={decoration} alt='home-decoration'></img>
                 </div>
                 <div className="steps-grey-container">
@@ -111,7 +113,7 @@ const HomeTreeColumns = () => {
         <>
             <div className="about-container">
                 <div className="about-us">
-                    <h2>O nas</h2>
+                    <h1 className="main-title">O nas</h1>
                     <img src={decoration} alt='home-decoration'></img>
                     <p>Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens parsnip.</p>
                     <div>
@@ -124,6 +126,214 @@ const HomeTreeColumns = () => {
         </>
     )
   }
+  const HomeWhoWeHelp = () => {     
+    return (
+        <>
+            <div className="who-we-help-container">
+                <div className="who-we-help">
+                    <h1 className="main-title">Komu pomagamy?</h1>
+                    <img src={decoration} alt='home-decoration'></img>
+                </div>
+                <Section/>
+            </div>
+        </>
+    )
+  }
+//   -----------------
+  const Pagination = ({data}) => {
+      
+      const [currentPage, setCurrentPage]=useState(1);
+
+      const indexOfLast = currentPage*3;
+      const indexOfFirst = indexOfLast - 3;
+      const currentArray = data.slice(indexOfFirst, indexOfLast)
+      const handleClick = (event, i)=> {
+        setCurrentPage(i)
+      }
+      useEffect(() => {
+         console.log("nowe dane")
+         setCurrentPage(1)         
+      }, [data])
+      const pageNumbers = [];
+    //   if(data.length >3) { => nie wyrederyje wtedy numeru strony
+            for(let i = 1; i <= Math.ceil(data.length/3); i++) {
+                const element = <p key={i} 
+                                    onClick={e=>handleClick(e,i)}
+                                    className={currentPage == i ? "active" : ""}
+                                    >{i}
+                                </p>
+                pageNumbers.push(element)
+            }
+    // }
+    return (
+        <>
+            <div className="types">
+                <div className="types-main-info">{data[0].header}</div>
+                <div className="types-inf">
+                    
+                        {currentArray.map((item, i) => {
+                            return(
+                                <>  <div className="one-of-type">
+                                        <h1 key={i}>{item.name}</h1>
+                                        <div className="purpose">
+                                            <p key={i}>{item.description}</p>
+                                            <p key={i}>{item.tags}</p>
+                                        </div>
+                                    </div>
+                                </>
+                            )
+                        })}
+                    </div>
+                </div>
+                <div className="page">
+                    {pageNumbers}
+                </div>
+            </>
+    );
+  };
+  
+  const Section = () => {
+    const [selectedCategory, setSelectedCategory] = useState("foundations");
+  
+    let data;
+    if (selectedCategory === "foundations") {
+      data = [
+        {
+          header:"W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują.",
+          name: "Fundacja “Dbam o Zdrowie”",
+          description: "Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji życiowej.",
+          tags: "ubrania, jedzenie, sprzęt AGD, meble, zabawki"
+        },
+        {
+          name: "Fundacja “Dla dzieci”",
+          description: "Cel i misja: Pomoc dzieciom z ubogich rodzin.",
+          tags: "ubrania, meble, zabawki"
+        },
+        {
+          name: "Fundacja “Bez domu”",
+          description: "Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania.",
+          tags: "ubrania, jedzenie, ciepłe koce"
+        },
+        {
+            name: "Fundacja “Dla nas”",
+            description: "Cel i misja: Nieść pomoc każdemu.",
+            tags: "ubrania, meble, jedzonko"
+          },
+          {
+            name: "Fundacja “Wyrównać szanse”",
+            description: "Cel i misja: Pomoc dla dzieci w wieku szkolnym z ubogich rodzin.",
+            tags: "podręczniki, zeszyty, przybory piśmiennicze"
+          },
+          {
+            name: "Fundacja “6”",
+            description: "Cel i misja: Pomoc dla dzieci w wieku szkolnym z ubogich rodzin.",
+            tags: "podręczniki, zeszyty, przybory piśmiennicze"
+          },
+          {
+            name: "Fundacja “7”",
+            description: "Cel i misja: Pomoc dla dzieci.",
+            tags: "podręczniki, zeszyty"
+          },
+          {
+            name: "Fundacja “8”",
+            description: "Cel i misja: Pomoc dla dzieci.",
+            tags: "podręczniki, zeszyty"
+          },
+          {
+            name: "Fundacja “9”",
+            description: "Cel i misja: Pomoc dla dzieci.",
+            tags: "podręczniki, zeszyty"
+          },
+      ];
+    } else if (selectedCategory === "organizations") {
+      data = [
+        {
+          header:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+          name: "Organizacja “Lorem Ipsum 1”",
+          description: "Quis varius quam quisque id diam vel quam elementum pulvinar.",
+          tags: ["Egestas, sed, tempus"]
+        },
+        {
+          name: "Organizacja “Lorem Ipsum 2”",
+          description: "Hendrerit gravida rutrum quisque non tellus orci ac auctor augue.",
+          tags: "Ut, aliquam, purus, sit, amet"
+        },
+        {
+          name: "Organizacja “Lorem Ipsum 3”",
+          description: "Scelerisque in dictum non consectetur a erat nam.",
+          tags: "Mi, quis, hendrerit, dolor"
+        },
+        {
+            name: "Organizacja “Lorem Ipsum 4”",
+            description: "Scelerisque in dictum non consectetur a erat nam.",
+            tags: "Mi, quis, hendrerit, dolor"
+          },
+          {
+            name: "Organizacja “Lorem Ipsum 5”",
+            description: "Hendrerit gravida rutrum quisque non tellus orci ac auctor augue.",
+            tags: "Ut, aliquam, purus, sit, amet"
+          },
+          {
+            name: "Organizacja “Lorem Ipsum 6”",
+            description: "Scelerisque in dictum non consectetur a erat nam.",
+            tags: "Mi, quis, hendrerit, dolor"
+          },
+        ];
+    } else {
+        data= [
+          {
+              header:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+              name: "Zbiórka “Lorem Ipsum 1”",
+              description: "Quis varius quam quisque id diam vel quam elementum pulvinar.",
+              tags: "Egestas, sed, tempus"
+            },
+            {
+              name: "Zbiórka “Lorem Ipsum 2”",
+              description: "Hendrerit gravida rutrum quisque non tellus orci ac auctor augue.",
+              tags: "Ut, aliquam, purus, sit, amet"
+            },
+            {
+              name: "Zbiórka “Lorem Ipsum 3”",
+              description: "Scelerisque in dictum non consectetur a erat nam.",
+              tags: "Mi, quis, hendrerit, dolor"
+            }
+          ];
+    }
+  
+    return (
+      <>
+        <div className="type-of-help">
+        <div
+            style={{
+              border: selectedCategory === "foundations" && "1px solid #3C3C3C"
+            }}
+            onClick={() => setSelectedCategory("foundations")}
+          >
+            Fundacjom
+          </div>
+          <div
+            style={{
+              border: selectedCategory === "organizations" && "1px solid #3C3C3C"
+            }}
+            onClick={() => setSelectedCategory("organizations")}
+          >
+            Organizacjom pozarządowym
+          </div>
+          <div
+            style={{
+              border: selectedCategory === "collections" && "1px solid #3C3C3C"
+            }}
+            onClick={() => setSelectedCategory("collections")}
+          >
+            Lokalnym zbiórkom
+          </div>
+        </div>
+        <Pagination data={data}/>
+      </>
+    );
+  };
+  
+  
 const Home = ()=> {
     return (
         <>
@@ -131,6 +341,7 @@ const Home = ()=> {
         <HomeTreeColumns/>  
         <Element name="simple_steps"><HomeSimpleSteps/></Element>
         <Element name="about"><HomeAbout/></Element>
+        <Element name="who_we_help"><HomeWhoWeHelp/></Element>
         </>
     )
 }
