@@ -3,7 +3,7 @@
 
 .main-view-container {
     display: flex;
-    height: 100vh;
+    justify-content: space-between;
     >img{
         width: 70rem;
         background-position: center;
@@ -11,7 +11,6 @@
     }
 }
 .header-container {
-    width: calc(100vw - 70rem);
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -140,7 +139,7 @@
 .main-title {
     font-size: 3.4rem;
     letter-spacing: -0.76px;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     font-weight: normal;
 }
 .simple-steps-container {
@@ -205,17 +204,11 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        h2 {
-            font-size: 3.4rem;
-            font-weight: 400;
-            letter-spacing: -0.76px;
-        }
         p{
             font-size: 2.4rem;
             max-width: 55rem;
         }
         img {
-            margin-top: 1.5rem;
             margin-bottom: 1.2rem;
         }
         >div {
@@ -318,4 +311,110 @@
 }
 .page .active {
     border: 1px solid #3C3C3C;
+}
+
+//------------------------------------
+
+// CONTACT
+.contact-container {
+    height: 75rem;
+    width: 100%;
+    position: relative;
+    background-image: url(../../assets/background-contact.jpg);
+    background-size: cover;  
+    .overlay {
+        position:absolute;
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.5);
+    }  
+    .contact {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        width:45%;
+        height: 93%;
+        .formularz {
+            margin-top: 3rem;
+            width: 65%;
+        }
+    }
+}
+.form-element  {
+    display: flex;
+    flex-direction: column;
+    label {
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-bottom: 0.7rem;
+    }
+    input {
+        border: none;
+        border-bottom: 1.2px solid $light-grey;
+        background: transparent;
+        width: 20.5rem;
+        margin-bottom: 0.5rem;
+        padding-bottom: 0.3rem;
+        &::placeholder {
+            color: $form-color;
+            font-family: $font-base;
+        }
+    }
+    textarea {
+        resize: none;
+        height: 10rem;
+        border: none;
+        border-bottom: 1.2px solid $light-grey;
+        background: transparent;
+        margin-bottom: 0.5rem;
+        &::placeholder {
+            color: $form-color;
+            font-family: $font-base;
+        }
+    }
+}
+.name-email-container {
+    display: flex;
+    justify-content: space-between;
+}
+.form-btn {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    button {
+        color: $dark-brown;
+        font-size: 1.5rem;
+        font-family: $font-base;
+        text-align: center;
+        font-weight: 300;
+        border: 0.8px solid $dark-brown;
+        background-color: transparent;
+        padding: 0.7rem 2.7rem;
+        cursor: pointer;
+    }
+}
+//CONTACT FOOTER
+footer {
+    height: 7%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    .contact-footer{
+        height: 100%;
+        width: 55%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        p {
+            font-size: 1.3rem;
+        }
+    }
+}
+.footer-icons {
+    margin-right: 12rem;
 }

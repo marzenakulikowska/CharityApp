@@ -7,9 +7,9 @@ import icon_1 from '../assets/icon-1.svg';
 import icon_2 from '../assets/icon-2.svg';
 import icon_3 from '../assets/icon-3.svg';
 import icon_4 from '../assets/icon-4.svg';
-import people from '../assets/people.jpg';
 import signature from '../assets/signature.svg'
-
+import instagram from '../assets/instagram.svg';
+import facebook from '../assets/facebook.svg';
 const HomeHeader = ()=> {
     return (
         <>
@@ -333,7 +333,51 @@ const HomeTreeColumns = () => {
     );
   };
   
-  
+const HomeContact = ()=> {
+    return (
+        <>
+              <div className="contact-container"> 
+              <div className="overlay">
+                  <div className="contact">
+                      <h1 className="main-title">Skontaktuj się z nami</h1>
+                      <img src={decoration} alt='home-decoration'></img>
+                      <div className="formularz">
+                        <form>
+                          <div className="name-email-container">
+                              <div className="form-element">
+                                  <label htmlFor="name">Wpisz swoje imię</label>
+                                  <input className="normal-input" id="name" placeholder={"Krzysztof"} ></input>
+                              </div>
+                              <div className="form-element">
+                                  <label htmlFor="email">Wpisz swój email</label>
+                                  <input className="normal-input" id="email" placeholder={"abc@xyz.pl"} ></input>                                 
+                              </div>
+                          </div>
+                          <div className="form-element">
+                              <label htmlFor="message">Wpisz swoją wiadomość</label>
+                              <textarea className="normal-textarea" id="message" placeholder={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."} ></textarea>
+                          </div>
+                          <div className="form-btn">
+                              <button type="submit">Wyślij</button>
+                          </div>
+                        </form>
+                      </div>
+                  </div>
+                  <footer>
+                          <div className="contact-footer">
+                            <p>Copyright by Coders Lab</p>
+                            <div className="footer-icons">
+                              <img src={facebook} style={{marginRight:"10px"}}alt="facebook-icon"></img>
+                              <img src={instagram} alt="instagram-icon"></img>
+                            </div>
+                          </div>
+                  </footer>
+              </div>
+            </div>
+        </>
+    )
+}
+//SPYTAĆ O TYPE i required W INPUT np. type="email" o aktywny zaznaczony label
 const Home = ()=> {
     return (
         <>
@@ -342,6 +386,7 @@ const Home = ()=> {
         <Element name="simple_steps"><HomeSimpleSteps/></Element>
         <Element name="about"><HomeAbout/></Element>
         <Element name="who_we_help"><HomeWhoWeHelp/></Element>
+        <Element name="contact"><HomeContact/></Element>
         </>
     )
 }
