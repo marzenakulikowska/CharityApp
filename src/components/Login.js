@@ -37,7 +37,7 @@ const Login = ()=> {
                             </form>
                         </div>
                         <div className="login-buttons">
-                            <button>Załóż konto</button>
+                            <button><NavLink to="/rejestracja">Załóż konto</NavLink></button>
                             <button className="login-btn">Zaloguj się</button>
                         </div>
                     </div>
