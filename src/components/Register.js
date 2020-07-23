@@ -41,8 +41,8 @@ const Register = ()=> {
                             </form>
                         </div>
                         <div className="register-buttons">
-                            <button className="login-btn"><NavLink to="/logowanie">Zaloguj się</NavLink></button>
-                            <button>Załóż konto</button>
+                            <button><NavLink to="/logowanie">Zaloguj się</NavLink></button>
+                            <button className="register-btn">Załóż konto</button>
                         </div>
                     </div>
                     </div>

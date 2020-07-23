@@ -19,7 +19,7 @@ const HomeHeader = ()=> {
                     <div className="section_top">
                         <div className="login_out">
                             <NavLink to="/logowanie">Zaloguj</NavLink>
-                            <NavLink to="/rejestracja" className="second_navlink">Załóż konto</NavLink>
+                            <NavLink to="/rejestracja" className="second_navlink">Załóż konto</NavLink>y
                         </div>
                         <div className="header_nav">
                             <Link to="start" smooth={true} duration={1500} >Start</Link>
