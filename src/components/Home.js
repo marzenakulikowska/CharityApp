@@ -333,50 +333,106 @@ const HomeTreeColumns = () => {
     );
   };
   
-const HomeContact = ()=> {
-    return (
-        <>
-              <div className="contact-container"> 
-              <div className="overlay">
-                  <div className="contact">
-                      <h1 className="main-title">Skontaktuj się z nami</h1>
-                      <img src={decoration} alt='home-decoration'></img>
-                      <div className="formularz">
-                        <form>
-                          <div className="name-email-container">
-                              <div className="form-element">
-                                  <label htmlFor="name">Wpisz swoje imię</label>
-                                  <input className="normal-input" id="name" placeholder={"Krzysztof"} ></input>
-                              </div>
-                              <div className="form-element">
-                                  <label htmlFor="email">Wpisz swój email</label>
-                                  <input className="normal-input" id="email" placeholder={"abc@xyz.pl"} ></input>                                 
-                              </div>
-                          </div>
-                          <div className="form-element">
-                              <label htmlFor="message">Wpisz swoją wiadomość</label>
-                              <textarea className="normal-textarea" id="message" placeholder={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."} ></textarea>
-                          </div>
-                          <div className="form-btn">
-                              <button type="submit">Wyślij</button>
-                          </div>
-                        </form>
-                      </div>
-                  </div>
-                  <footer>
-                          <div className="contact-footer">
-                            <p>Copyright by Coders Lab</p>
-                            <div className="footer-icons">
-                              <img src={facebook} style={{marginRight:"10px"}}alt="facebook-icon"></img>
-                              <img src={instagram} alt="instagram-icon"></img>
+  const HomeContact = ()=> {
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
+    const [errorName, setErrorsName] = useState("");
+    const [errorEmail, setErrorsEmail] = useState("");
+    const [errorMessage, setErrorsMessage] = useState("");
+    const [sendMsg, setSendMsg] = useState("none");
+    const [formData, setFormData] = useState([]);
+    const handleSubmit = (e) => {
+      const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      e.preventDefault(); 
+      if(name.length == 0 || name.indexOf(" ")!=-1) {
+        setErrorsName("Imię jest wymagane i musi być 1 wyrazem")
+      }
+      else if(!re.test(email)) {
+        setErrorsEmail("E-mail nieprawidłowy")
+      }
+      else if (message.length < 120) {
+          setErrorsMessage("Wiadomość musi mieć minimum 120 znaków")
+      }
+      else {
+          setErrorsName("");
+          setErrorsMessage("");
+          setErrorsEmail("");
+          const data = {
+            name: name,
+            email: email,
+            message: message
+          }
+          console.log(data);
+          fetch(`https://fer-api.coderslab.pl/v1/portfolio/contact`, {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }).then((response) => {
+              setName("");
+              setEmail("");
+              setMessage("");
+              setSendMsg("block");
+              // let timeout = setTimeout(setSendMsg("block"),10000);
+              // clearTimeout(timeout);
+              // setSendMsg("none")
+              console.log(response);
+          }).catch((error) => {
+            console.log(error)
+          })
+        
+      }
+  }
+     return (
+          <>
+                <div className="contact-container"> 
+                <div className="overlay">
+                    <div className="contact">
+                        <h1 className="main-title">Skontaktuj się z nami</h1>
+                        <img src={decoration} alt='home-decoration'></img>
+                        <div className="success" style={{display:sendMsg}}>Wiadomość została wysłana!<br></br>Wkrótce się skontaktujemy.</div>
+                        <div className="formularz">
+                          <form onSubmit ={handleSubmit}>
+                            <div className="name-email-container">
+                                <div className="form-element">
+                                    <label htmlFor="name">Wpisz swoje imię</label>
+                                    <input className="normal-input" id="name" placeholder={"Krzysztof"} value={name} onChange={(e) => setName(e.target.value)}></input>
+                                    <p className="error">{errorName}</p>
+                                </div>
+                                <div className="form-element">
+                                    <label htmlFor="email">Wpisz swój email</label>
+                                    <input className="normal-input" id="email" placeholder={"abc@xyz.pl"} value={email} onChange={(e) => setEmail(e.target.value)}></input>
+                                    <p className="error">{errorEmail}</p>
+                                </div>
                             </div>
-                          </div>
-                  </footer>
+                            <div className="form-element">
+                                <label htmlFor="message">Wpisz swoją wiadomość</label>
+                                <textarea className="normal-textarea" id="message" placeholder={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."}  value={message} onChange={(e) => setMessage(e.target.value)}></textarea>
+                                <p className="error">{errorMessage}</p>
+                            </div>
+                            <div className="form-btn">
+                                {/* <button type="submit" onClick={handleSendForm}>Wyślij</button> */}
+                                <button type="submit">Wyślij</button>
+                            </div>
+                          </form>
+                        </div>
+                    </div>
+                    <footer>
+                            <div className="contact-footer">
+                              <p>Copyright by Coders Lab</p>
+                              <div className="footer-icons">
+                                <img src={facebook} style={{marginRight:"10px"}}alt="facebook-icon"></img>
+                                <img src={instagram} alt="instagram-icon"></img>
+                              </div>
+                            </div>
+                    </footer>
+                </div>
               </div>
-            </div>
-        </>
-    )
-}
+          </>
+      )
+  }
 //SPYTAĆ O TYPE i required W INPUT np. type="email" o aktywny zaznaczony label
 const Home = ()=> {
     return (
