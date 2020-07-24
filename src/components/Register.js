@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { NavLink} from 'react-router-dom'; 
 import {Link} from "react-scroll";
 import decoration from '../assets/decoration.svg';
@@ -19,33 +19,33 @@ const Register = ()=> {
                             <Link to="contact"  smooth={true} duration={1500}>Kontakt</Link>
                         </div>
                     </div>
-                    <div className="register-container">
+                    <div className="login-register-container">
                         <div>
                             <h1 className="main-title">Załóż konto</h1>
                             <img src={decoration} alt='home-decoration'></img>
-                        </div>
-                        <div className="register-content">
-                            <form>
-                                <div className="register-form-element">
+                    </div>
+                    <form >
+                        <div className="login-register-content" style={{height:"30rem"}}>
+                                <div className="login-register-form-element">
                                     <label htmlFor="email">E-mail</label>
-                                    <input id="email"></input>
+                                    <input id="email" ></input>
                                 </div>
-                                <div className="register-form-element">
+                                <div className="login-register-form-element">
                                     <label htmlFor="password">Hasło</label>
-                                    <input id="password"></input>
+                                    <input type="password" id="password" ></input>
                                 </div>
-                                <div className="register-form-element">
+                                <div className="login-register-form-element">
                                     <label htmlFor="password-repeat">Powtórz hasło</label>
-                                    <input id="password-repeat"></input>
+                                    <input type="password" id="password-repeat" ></input>
                                 </div>
-                            </form>
                         </div>
-                        <div className="register-buttons">
+                        <div className="login-register-buttons">
                             <button><NavLink to="/logowanie">Zaloguj się</NavLink></button>
-                            <button className="register-btn">Załóż konto</button>
-                        </div>
-                    </div>
-                    </div>
+                            <button type="submit" className="login-register-btn">Załóż konto</button>
+                        </div>    
+                    </form>
+                </div>
+            </div>
         </>
     )
 }

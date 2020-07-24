@@ -19,7 +19,7 @@ const HomeHeader = ()=> {
                     <div className="section_top">
                         <div className="login_out">
                             <NavLink to="/logowanie">Zaloguj</NavLink>
-                            <NavLink to="/rejestracja" className="second_navlink">Załóż konto</NavLink>y
+                            <NavLink to="/rejestracja" className="second_navlink">Załóż konto</NavLink>
                         </div>
                         <div className="header_nav">
                             <Link to="start" smooth={true} duration={1500} >Start</Link>
@@ -159,7 +159,7 @@ const HomeTreeColumns = () => {
             for(let i = 1; i <= Math.ceil(data.length/3); i++) {
                 const element = <p key={i} 
                                     onClick={e=>handleClick(e,i)}
-                                    className={currentPage == i ? "active" : ""}
+                                    className={currentPage === i ? "active" : ""}
                                     >{i}
                                 </p>
                 pageNumbers.push(element)
@@ -341,11 +341,10 @@ const HomeTreeColumns = () => {
     const [errorEmail, setErrorsEmail] = useState("");
     const [errorMessage, setErrorsMessage] = useState("");
     const [sendMsg, setSendMsg] = useState("none");
-    const [formData, setFormData] = useState([]);
     const handleSubmit = (e) => {
       const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       e.preventDefault(); 
-      if(name.length == 0 || name.indexOf(" ")!=-1) {
+      if(name.length === 0 || name.indexOf(" ")!==-1) {
         setErrorsName("Imię jest wymagane i musi być 1 wyrazem")
       }
       else if(!re.test(email)) {
@@ -375,9 +374,7 @@ const HomeTreeColumns = () => {
               setEmail("");
               setMessage("");
               setSendMsg("block");
-              // let timeout = setTimeout(setSendMsg("block"),10000);
-              // clearTimeout(timeout);
-              // setSendMsg("none")
+              let timeout = setTimeout(() => setSendMsg("none"),2000);
               console.log(response);
           }).catch((error) => {
             console.log(error)
@@ -413,7 +410,6 @@ const HomeTreeColumns = () => {
                                 <p className="error">{errorMessage}</p>
                             </div>
                             <div className="form-btn">
-                                {/* <button type="submit" onClick={handleSendForm}>Wyślij</button> */}
                                 <button type="submit">Wyślij</button>
                             </div>
                           </form>
@@ -433,7 +429,6 @@ const HomeTreeColumns = () => {
           </>
       )
   }
-//SPYTAĆ O TYPE i required W INPUT np. type="email" o aktywny zaznaczony label
 const Home = ()=> {
     return (
         <>
