@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/CharityApp/static/css/main.c84bcc54.chunk.css",
-    "main.js": "/CharityApp/static/js/main.361f7eaf.chunk.js",
-    "main.js.map": "/CharityApp/static/js/main.361f7eaf.chunk.js.map",
+    "main.css": "/CharityApp/static/css/main.4b77b4b6.chunk.css",
+    "main.js": "/CharityApp/static/js/main.b378fcf1.chunk.js",
+    "main.js.map": "/CharityApp/static/js/main.b378fcf1.chunk.js.map",
     "runtime-main.js": "/CharityApp/static/js/runtime-main.c5ed5621.js",
     "runtime-main.js.map": "/CharityApp/static/js/runtime-main.c5ed5621.js.map",
     "static/js/2.073ac614.chunk.js": "/CharityApp/static/js/2.073ac614.chunk.js",
     "static/js/2.073ac614.chunk.js.map": "/CharityApp/static/js/2.073ac614.chunk.js.map",
     "index.html": "/CharityApp/index.html",
-    "precache-manifest.df604fe25d6aef05fab1f53606d47fa5.js": "/CharityApp/precache-manifest.df604fe25d6aef05fab1f53606d47fa5.js",
+    "precache-manifest.64257fcc37e2d2db2029c39e5dbf7aed.js": "/CharityApp/precache-manifest.64257fcc37e2d2db2029c39e5dbf7aed.js",
     "service-worker.js": "/CharityApp/service-worker.js",
-    "static/css/main.c84bcc54.chunk.css.map": "/CharityApp/static/css/main.c84bcc54.chunk.css.map",
+    "static/css/main.4b77b4b6.chunk.css.map": "/CharityApp/static/css/main.4b77b4b6.chunk.css.map",
     "static/js/2.073ac614.chunk.js.LICENSE.txt": "/CharityApp/static/js/2.073ac614.chunk.js.LICENSE.txt",
     "static/media/main.scss": "/CharityApp/static/media/people.6fa36651.jpg",
     "static/media/decoration.svg": "/CharityApp/static/media/decoration.2290784e.svg",
@@ -26,7 +26,7 @@
   "entrypoints": [
     "static/js/runtime-main.c5ed5621.js",
     "static/js/2.073ac614.chunk.js",
-    "static/css/main.c84bcc54.chunk.css",
-    "static/js/main.361f7eaf.chunk.js"
+    "static/css/main.4b77b4b6.chunk.css",
+    "static/js/main.b378fcf1.chunk.js"
   ]
 }

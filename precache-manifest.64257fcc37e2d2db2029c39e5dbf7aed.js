@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "741c13f9630df33a3293b9253f78ee6a",
+    "revision": "41a3aaffa9e647ccaa44af8ba3d6e028",
     "url": "/CharityApp/index.html"
   },
   {
-    "revision": "87a6d830bb4232cffb86",
-    "url": "/CharityApp/static/css/main.c84bcc54.chunk.css"
+    "revision": "af627648764d11113d46",
+    "url": "/CharityApp/static/css/main.4b77b4b6.chunk.css"
   },
   {
     "revision": "d9821db5e13d34799735",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/CharityApp/static/js/2.073ac614.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "87a6d830bb4232cffb86",
-    "url": "/CharityApp/static/js/main.361f7eaf.chunk.js"
+    "revision": "af627648764d11113d46",
+    "url": "/CharityApp/static/js/main.b378fcf1.chunk.js"
   },
   {
     "revision": "57206822dac40c524a26",
