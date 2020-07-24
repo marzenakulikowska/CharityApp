@@ -5,8 +5,10 @@
 }
 html {
     font-size: 10px;
+    
 }
 body {
     font-family: $font-base;
     color: $dark-brown;
+    min-width: 1200px;
 }

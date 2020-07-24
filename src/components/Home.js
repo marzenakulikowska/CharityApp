@@ -13,7 +13,7 @@ import facebook from '../assets/facebook.svg';
 const HomeHeader = ()=> {
     return (
         <>
-            <div className="main-view-container">
+            <div className="main-view-container" style={{minWidth:"1200px"}}>
                     <img src={home_package} alt="header-photo"></img>
                     <div className="header-container">
                     <div className="section_top">
@@ -384,7 +384,7 @@ const HomeTreeColumns = () => {
   }
      return (
           <>
-                <div className="contact-container"> 
+                <div className="contact-container" style={{minWidth:"1200px"}}> 
                 <div className="overlay">
                     <div className="contact">
                         <h1 className="main-title">Skontaktuj się z nami</h1>
