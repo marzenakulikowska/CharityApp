@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/CharityApp/static/css/main.c84bcc54.chunk.css",
+    "main.js": "/CharityApp/static/js/main.361f7eaf.chunk.js",
+    "main.js.map": "/CharityApp/static/js/main.361f7eaf.chunk.js.map",
+    "runtime-main.js": "/CharityApp/static/js/runtime-main.c5ed5621.js",
+    "runtime-main.js.map": "/CharityApp/static/js/runtime-main.c5ed5621.js.map",
+    "static/js/2.073ac614.chunk.js": "/CharityApp/static/js/2.073ac614.chunk.js",
+    "static/js/2.073ac614.chunk.js.map": "/CharityApp/static/js/2.073ac614.chunk.js.map",
+    "index.html": "/CharityApp/index.html",
+    "precache-manifest.df604fe25d6aef05fab1f53606d47fa5.js": "/CharityApp/precache-manifest.df604fe25d6aef05fab1f53606d47fa5.js",
+    "service-worker.js": "/CharityApp/service-worker.js",
+    "static/css/main.c84bcc54.chunk.css.map": "/CharityApp/static/css/main.c84bcc54.chunk.css.map",
+    "static/js/2.073ac614.chunk.js.LICENSE.txt": "/CharityApp/static/js/2.073ac614.chunk.js.LICENSE.txt",
+    "static/media/main.scss": "/CharityApp/static/media/people.6fa36651.jpg",
+    "static/media/decoration.svg": "/CharityApp/static/media/decoration.2290784e.svg",
+    "static/media/facebook.svg": "/CharityApp/static/media/facebook.df65b6c0.svg",
+    "static/media/home_package.jpg": "/CharityApp/static/media/home_package.3a8fd9f8.jpg",
+    "static/media/icon-1.svg": "/CharityApp/static/media/icon-1.91147906.svg",
+    "static/media/icon-2.svg": "/CharityApp/static/media/icon-2.db91e33e.svg",
+    "static/media/icon-3.svg": "/CharityApp/static/media/icon-3.2cfe9dfe.svg",
+    "static/media/icon-4.svg": "/CharityApp/static/media/icon-4.436df0aa.svg",
+    "static/media/instagram.svg": "/CharityApp/static/media/instagram.703479fd.svg",
+    "static/media/signature.svg": "/CharityApp/static/media/signature.e54cfcfc.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c5ed5621.js",
+    "static/js/2.073ac614.chunk.js",
+    "static/css/main.c84bcc54.chunk.css",
+    "static/js/main.361f7eaf.chunk.js"
+  ]
+}
